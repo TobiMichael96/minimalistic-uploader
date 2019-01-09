@@ -16,10 +16,10 @@ Also the default configuration will not create any syslinks and print the url of
 
 ## Usage options
 
-	This will upload a file and copy the URL to clipboard:
+This will upload a file and copy the URL to clipboard:
 
-	```bash
-	curl -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
-	```
+```console
+curl -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
+```
   
   
