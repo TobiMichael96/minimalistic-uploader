@@ -19,15 +19,14 @@ Also the default configuration will not create any syslinks and print the url of
 
 ## Usage options
 
-  This will upload a file and copy the URL to clipboard:
+  * This will upload a file and copy the URL to clipboard:
 
-```bash
-curl -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
-```
-&nbsp;
+ ```bash
+ curl -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
+ ```
+ 
+ * Or if you are using the NGINX BASIC HTTP AUTHENTICATION:
 
-  Or if you are using the NGINX BASIC HTTP AUTHENTICATION:
-
-```bash
-curl -u username:password -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
-```
+ ```bash
+ curl -u username:password -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
+ ```
