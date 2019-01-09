@@ -9,7 +9,7 @@ $settings = array(
 
     // URL for the server; do not forget the trailing slash!
     // If you leave this empty, the URL stays the same as the page is
-    'page_url' => autoDetectBaseUrl(),
+    'page_url' => 'https://yoururl.com/',
 
     // Characters for the random filename
     'random_name_alphabet' => 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789',
