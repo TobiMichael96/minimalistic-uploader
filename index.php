@@ -1,5 +1,5 @@
 <?php
-if (isset($_FILES['_files'])) {
+if (isset($_FILES['file'])) {
 
     // Checks if a config file exists, if yes the config file will be used instead of the defaults
     if (file_exists('config.php')) {
@@ -22,8 +22,8 @@ if (isset($_FILES['_files'])) {
 	);
     }
 
-    $imgname = $_FILES['_files']['name'];
-    $imgname_tmp = $_FILES['_files']['tmp_name'];
+    $imgname = $_FILES['file']['name'];
+    $imgname_tmp = $_FILES['file']['tmp_name'];
 
     $extension = substr($imgname, strpos($imgname, ".") + 1);
 
