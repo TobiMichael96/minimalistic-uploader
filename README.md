@@ -30,3 +30,29 @@ Also the default configuration will not create any syslinks and print the url of
  ```bash
  curl -u username:password -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
  ```
+
+## NGINX sample configuration (without HTTPS)
+
+	server {
+    	listen 80;
+    	listen [::]:80;
+    	server_name yoururl.com;
+
+    	root /var/www/html;
+		index index.php;
+
+    	location /uploader {
+        	auth_basic "Restricted access";
+        	auth_basic_user_file /etc/nginx/.htpasswd;
+
+        	try_files $uri $uri/ /index.php?url=$request_uri;
+    	} 
+		
+		location /index.php {
+			fastcgi_split_path_info ^(.+\.php)(/.+)$;
+			fastcgi_pass unix:/var/run/php7.0-fpm.sock;
+			fastcgi_index index.php;
+			include fastcgi_params;
+		}
+	}
+
