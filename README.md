@@ -2,8 +2,10 @@
 
 This simple PHP script will upload any files to your server.
 
-> :warning: **Security warning**: There is absolutely no security guaranteed, so you have to take care about this yourself.
- See the [NGINX docs](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/) how to secure your NGINX server with basic HTTP authentication.
+:warning: **Security warning**: There is absolutely no security guaranteed, so you have to take care about this yourself.
+ > See the [NGINX docs](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/) how to secure your NGINX server with basic HTTP authentication.
+ 
+ > There is no check for executable files, so you have to take care of this as well.
 
 ## Installation
 
