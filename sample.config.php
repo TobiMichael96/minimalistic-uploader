@@ -13,5 +13,8 @@ $settings = array(
 
     // Characters for the random filename
     'random_name_alphabet' => 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789',
+
+    // Mime type you want to accept
+    'screenshot_mime_type' => IMAGETYPE_JPEG,
  );
 ?>

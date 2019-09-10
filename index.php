@@ -19,6 +19,9 @@ if (isset($_FILES['file'])) {
 
 	    // Characters for the random filename
 	    'random_name_alphabet' => 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789',
+
+	    // Mime type you want to accept
+	    'screenshot_mime_type' => IMAGETYPE_JPEG,
 	);
     }
 
@@ -29,7 +32,7 @@ if (isset($_FILES['file'])) {
 
     // Generating random file name
     $imgname = '';
-    while (strlen($imgname) < 10) {
+    while (strlen($imgname) < 12) {
 	$imgname .= $settings['random_name_alphabet'][mt_rand(0, strlen($settings['random_name_alphabet']) - 1)];
     }
     $imgname .= '.' . $extension;
