@@ -37,8 +37,7 @@ USER nobody
 WORKDIR /var/www/html
 COPY --chown=nobody index.php /var/www/html/
 COPY --chown=nobody custom_font.css /var/www/html/
-COPY --chown=nobody uploader/config.php /var/www/html/uploader/
-COPY --chown=nobody uploader/index.php /var/www/html/uploader/
+COPY --chown=nobody uploader /var/www/html/uploader
 
 # Expose the port nginx is reachable on
 EXPOSE 8080
