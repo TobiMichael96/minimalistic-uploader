@@ -1,5 +1,7 @@
 # minimalistic-uploader
 
+![Docker Image CI](https://github.com/TobiMichael96/minimalistic-uploader/workflows/Docker%20Image%20CI/badge.svg?branch=master)
+
 This simple PHP script will upload any files to your server.
 
 :warning: **Security warning**: There is absolutely no security guaranteed, so you have to take care about this yourself.
