@@ -23,8 +23,11 @@ There are some environment variables available:
 - NAME_LENGTH (sets the length of the random name, default: 12)
 
 
+#### Security options
+
 - HTTP_AUTH_LOGIN (sets the username for the nginx auth_basic)
 - HTTP_AUTH_PASSWORD (sets the password for the nginx auth_basic)
+
 Both of these must be present in order to use auth_basic.
 
 ## Usage options
