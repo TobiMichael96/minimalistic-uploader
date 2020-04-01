@@ -1,27 +1,23 @@
 <?php
-if (file_exists('uploader/config.php')) {
-    include 'uploader/config.php';
-    if ($settings['symlink_dir'] !== '') {
-        $folder = $settings['symlink_dir'];
-    } else {
-        $folder = $settings['upload_dir'];
-    }
-    $extension = $settings['image_extension'];
-    $base_url = $settings['page_url'];
+include 'uploader/settings.php';
+
+$files = array();
+$counter = 0;
+
+if ($sym_folder_set == True) {
+    $folder = $sym_folder;
 } else {
-    $folder = dirname(__FILE__) . DIRECTORY_SEPARATOR;
-    $extension = 'jpg';
-    $base_url = autoDetectBaseUrl();
+    $folder = $upload_folder;
 }
 
-
 if (isset($_GET['delete'])) {
-    unlink($_GET['delete']);
-    header('Location: ' . $base_url);
+    if (strpos($_GET['delete'], $folder) !== false) {
+        unlink($_GET['delete']);
+        header('Location: ' . $base_url);
+    } else {
+        exit("Error, file not found!");
+    }
 } else {
-    $files = array();
-    $counter = 0;
-
     foreach (glob($folder . '*.*') as $file) {
         if (substr($file, strpos($file, ".") + 1) == $extension) {
             $files[$counter] = array("name" => basename($file), "time" => filemtime($file), "path" => $file);
@@ -33,27 +29,6 @@ if (isset($_GET['delete'])) {
         return $b['time'] <=> $a['time'];
     });
 }
-
-// Detects base URL
-function autoDetectBaseUrl()
-{
-    // Detect protocol
-    $protocol = 'http';
-    if (((isset($_SERVER['HTTPS'])) && (strtolower($_SERVER['HTTPS']) == 'on')) ||
-        ((isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) && (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) == 'https'))) $protocol = 'https';
-
-    // Detect port
-    $port = getenv('SERVER_PORT');
-    if ((($port == 80) && ($protocol == 'http')) || (($port == 443) && ($protocol == 'https'))) $port = '';
-
-    // Detect server name
-    $server_name = getenv('SERVER_NAME');
-    if ($server_name === false) $server_name = 'localhost';
-
-    // Construct base URL
-    return sprintf('%s://%s%s%s', $protocol, $server_name, $port, dirname(getenv('SCRIPT_NAME'))) . DIRECTORY_SEPARATOR;
-}
-
 ?>
 
 <html>
@@ -61,10 +36,9 @@ function autoDetectBaseUrl()
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>TM - Screenshots</title>
-    <link rel="icon" type="image/png" href="https://www.tobiasmichael.de/images/my-fav.png"/>
+    <link rel="icon" type="image/icon" href="favicon.ico"/>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="custom_font.css">
 </head>
@@ -91,7 +65,6 @@ function autoDetectBaseUrl()
                 echo '<td class="col-5">' . date("d F Y", $time) . ' at ' . date("H:i:s", $time) . '</td>';
                 echo '<td class="col-2"><a href="' . $base_url . 'index.php?delete=' . $path . '" class="btn btn-danger btn-sm">Delete</a></td>';
                 echo '</tr>';
-
             }
             ?>
 

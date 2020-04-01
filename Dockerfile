@@ -37,6 +37,7 @@ USER nobody
 WORKDIR /var/www/html
 COPY --chown=nobody index.php /var/www/html/
 COPY --chown=nobody custom_font.css /var/www/html/
+COPY --chown=nobody favicon.ico /var/www/html/
 COPY --chown=nobody uploader /var/www/html/uploader
 
 # Expose the port nginx is reachable on
