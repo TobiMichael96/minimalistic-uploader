@@ -17,6 +17,8 @@ jobs:
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag ausraster/minimalistic-uploader
+      - name: Tag the Docker image
+        run: docker tag ausraster/minimalistic-uploader
       - name: Push the latest Docker image
         run: docker push ausraster/minimalistic-uploader
 
