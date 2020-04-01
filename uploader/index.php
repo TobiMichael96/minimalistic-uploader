@@ -9,7 +9,7 @@ if (isset($_FILES['file'])) {
 
     // Generating random file name
     $imgname = '';
-    while (strlen($imgname) < 12) {
+    while (strlen($imgname) < $name_length) {
         $imgname .= $characters[mt_rand(0, strlen($characters) - 1)];
     }
     $imgname .= '.' . $extension_file;
