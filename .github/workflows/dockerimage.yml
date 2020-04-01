@@ -11,7 +11,7 @@ on:
 jobs:
 build:
 runs-on: ubuntu-latest
-		steps:
-			- uses: actions/checkout@v1
-			- name: Build the tagged Docker image
+	steps:
+		- uses: actions/checkout@v1
+		- name: Build the tagged Docker image
 			run: docker build . --file Dockerfile --tag minimalistic-uploader
