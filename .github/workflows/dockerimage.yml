@@ -13,3 +13,4 @@ runs-on: ubuntu-latest
 		- uses: actions/checkout@v1
 		- name: Build the Docker image
         run: docker build . --file Dockerfile --tag minimalistic-uploader
+        
