@@ -18,24 +18,17 @@ COPY config/php.ini /etc/php7/conf.d/custom.ini
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Setup document root
-RUN mkdir -p /var/www/html/uploader
-
-# Setup image folder
-RUN mkdir -p /mnt/images
+RUN mkdir -p /var/www/html
 
 # Make sure files/folders needed by the processes are accessable when they run under the nobody user
 RUN chown -R nobody.nobody /var/www/html && \
   chown -R nobody.nobody /run && \
   chown -R nobody.nobody /var/lib/nginx && \
-  chown -R nobody.nobody /var/log/nginx && \
-  chown -R nobody.nobody /mnt/images
+  chown -R nobody.nobody /var/log/nginx
 
 # Add application
 WORKDIR /var/www/html
-COPY --chown=nobody index.php /var/www/html/
-COPY --chown=nobody custom_font.css /var/www/html/
-COPY --chown=nobody favicon.ico /var/www/html/
-COPY --chown=nobody uploader /var/www/html/uploader
+COPY --chown=nobody webserver /var/www/html/
 
 # Expose the port nginx is reachable on
 EXPOSE 8080

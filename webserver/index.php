@@ -1,5 +1,5 @@
 <?php
-include 'uploader/settings.php';
+include 'settings.php';
 
 $files = array();
 $counter = 0;
