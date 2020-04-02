@@ -35,13 +35,13 @@ Both of these must be present in order to use auth_basic.
   * This will upload a file and copy the URL to clipboard:
 
  ```bash
- curl -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
+ curl -F "file=@IMAGE.jpg" https://yoururl.com/uploader | xclip -sel clip
  ```
  
  * Or if you are using the NGINX BASIC HTTP AUTHENTICATION:
 
  ```bash
- curl -u username:password -F "file=@IMAGE.jpg" https://yoururl.com | xclip -sel clip
+ curl -u username:password -F "file=@IMAGE.jpg" https://yoururl.com/uploader | xclip -sel clip
  ```
 
 ## NGINX as reverse proxy for the container (without HTTPS)
