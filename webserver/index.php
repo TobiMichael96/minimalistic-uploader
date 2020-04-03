@@ -36,7 +36,7 @@ if (isset($_GET['delete'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="refresh" content="30" >
-    <title>TM - Screenshots</title>
+    <title><?php echo $page_title ?></title>
     <link rel="icon" type="image/icon" href="favicon.ico"/>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">

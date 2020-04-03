@@ -16,6 +16,7 @@ Pull the Image via ```docker pull ausraster/minimalistic-uploader``` and run it.
 There are some environment variables available:
 
 - PAGE_URL (sets the page url, if not set it tries to get it automatically)
+- PAGE_TITLE (sets the page title, default: Uploader)
 - FILE_EXTENSION (sets the accepted file extension, only one is possible at this point, default: jpg)
 - UPLOAD_DIR (sets the directory where the files get uploaded to, default: /var/www/html/)
 - SYMLINK_DIR (sets the directory for the symlink directory, mandatory when *UPLOAD_DIR* is set)

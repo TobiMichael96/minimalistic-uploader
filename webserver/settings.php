@@ -57,6 +57,12 @@ if (getenv('NAME_LENGTH') !== False) {
     $name_length = 12;
 }
 
+# Get page title from environment variables, if not present set to Uploader
+if (getenv('PAGE_TITLE') !== False) {
+    $page_title = getenv('PAGE_TITLE');
+} else {
+    $page_title = 'Uploader';
+}
 
 // Detects base URL
 function autoDetectBaseUrl()
