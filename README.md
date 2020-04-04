@@ -1,6 +1,6 @@
 # minimalistic-uploader
 
-![Docker Image CI](https://github.com/TobiMichael96/minimalistic-uploader/workflows/Docker%20Image%20CI/badge.svg?branch=master)
+![Docker Image CI Tags](https://github.com/TobiMichael96/minimalistic-uploader/workflows/Docker%20Image%20CI%20Tags/badge.svg)
 
 This Docker Image will upload any files to your server.
 
