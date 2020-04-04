@@ -10,9 +10,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-        with:
-          slug: ausraster/minimalistic-uploader
-          readme: README.md
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: Get the version
