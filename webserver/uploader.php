@@ -14,7 +14,7 @@ if (isset($_FILES['file'])) {
     }
     $imgname .= '.' . $extension_file;
 
-    if ($extension_file == $extension) {
+    if (in_array($extension_file, $extensions)) {
         if (move_uploaded_file($imgname_tmp, $upload_folder . $imgname)) {
             if ($sym_folder_set == True) {
                 if (symlink($upload_folder . $imgname, $sym_folder . $imgname)) {

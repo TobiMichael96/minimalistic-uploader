@@ -17,7 +17,7 @@ There are some environment variables available:
 
 - PAGE_URL (sets the page url, if not set it tries to get it automatically)
 - PAGE_TITLE (sets the page title, default: Uploader)
-- FILE_EXTENSION (sets the accepted file extension, only one is possible at this point, default: jpg)
+- FILE_EXTENSION (sets the accepted file extension(s) (divided by *,*, default: jpg)
 - UPLOAD_DIR (sets the directory where the files get uploaded to, default: /var/www/html/)
 - SYMLINK_DIR (sets the directory for the symlink directory, mandatory when *UPLOAD_DIR* is set)
 - CHARACTERS (sets the character pool for the random name, default: AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789)

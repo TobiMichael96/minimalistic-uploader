@@ -13,9 +13,10 @@ if (getenv('PAGE_URL') !== False) {
 
 # Get page url from environment variables, if not present set to jpg
 if (getenv('FILE_EXTENSION') !== False) {
-    $extension = getenv('FILE_EXTENSION');
+    $extensions_env = getenv('FILE_EXTENSION');
+    $extensions = explode(',', $extensions_env);
 } else {
-    $extension = 'jpg';
+    $extensions = array('jpg');
 }
 
 # Get the upload folder from environment variables, if not present set current folder

@@ -19,7 +19,7 @@ if (isset($_GET['delete'])) {
     }
 } else {
     foreach (glob($folder . '*.*') as $file) {
-        if (substr($file, strpos($file, ".") + 1) == $extension) {
+        if (in_array(substr($file, strpos($file, ".") + 1), $extensions)) {
             $files[$counter] = array("name" => basename($file), "time" => filemtime($file), "path" => $file);
             ++$counter;
         }
