@@ -29,7 +29,6 @@ if (getenv('UPLOAD_DIR') !== False) {
         $upload_folder = DIRECTORY_SEPARATOR . $upload_folder;
     }
     if (getenv('SYMLINK_DIR') !== False) {
-        $sym_folder_set = True;
         $sym_folder = getenv('SYMLINK_DIR');
         if (substr($sym_folder, -1) !== '/') {
             $sym_folder = $sym_folder . DIRECTORY_SEPARATOR;
@@ -37,6 +36,11 @@ if (getenv('UPLOAD_DIR') !== False) {
         if (substr($sym_folder, 0, 1) !== '/') {
             $sym_folder = DIRECTORY_SEPARATOR . $sym_folder;
         }
+        
+        if  ($sym_folder !== '/var/www/html/') {
+            $sym_folder_set = True;
+        }
+        
     } else {
         exit("Error, SYMLINK_DIR not set!");
     }
