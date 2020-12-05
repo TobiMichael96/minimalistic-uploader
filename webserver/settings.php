@@ -20,33 +20,7 @@ if (getenv('FILE_EXTENSION') !== False) {
 }
 
 # Get the upload folder from environment variables, if not present set current folder
-if (getenv('UPLOAD_DIR') !== False) {
-    $upload_folder = getenv('UPLOAD_DIR');
-    if (substr($upload_folder, -1) !== '/') {
-        $upload_folder = $upload_folder . DIRECTORY_SEPARATOR;
-    }
-    if (substr($upload_folder, 0, 1) !== '/') {
-        $upload_folder = DIRECTORY_SEPARATOR . $upload_folder;
-    }
-    if (getenv('SYMLINK_DIR') !== False) {
-        $sym_folder = getenv('SYMLINK_DIR');
-        if (substr($sym_folder, -1) !== '/') {
-            $sym_folder = $sym_folder . DIRECTORY_SEPARATOR;
-        }
-        if (substr($sym_folder, 0, 1) !== '/') {
-            $sym_folder = DIRECTORY_SEPARATOR . $sym_folder;
-        }
-        
-        if  ($sym_folder !== '/var/www/html/') {
-            $sym_folder_set = True;
-        }
-        
-    } else {
-        exit("Error, SYMLINK_DIR not set!");
-    }
-} else {
-    $upload_folder = '/var/www/html/';
-}
+$upload_folder = '/var/www/html/images/';
 
 # Get available characters from environment variables
 if (getenv('CHARACTERS') !== False) {

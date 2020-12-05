@@ -16,15 +16,7 @@ if (isset($_FILES['file'])) {
 
     if (in_array($extension_file, $extensions)) {
         if (move_uploaded_file($imgname_tmp, $upload_folder . $imgname)) {
-            if ($sym_folder_set == True) {
-                if (symlink($upload_folder . $imgname, $sym_folder . $imgname)) {
-                    echo $base_url . $imgname;
-                } else {
-                    exit("Error, could not create symlink!");
-                }
-            } else {
-                echo $base_url . $imgname;
-            }
+            echo $base_url . 'images/' . $imgname;
         } else {
             exit("Error, cloud not move file!");
         }

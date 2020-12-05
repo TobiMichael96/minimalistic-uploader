@@ -14,21 +14,10 @@ else
   echo "Basic auth is off (HTTP_AUTH_PASSWORD not provided)."
 fi
 
-if [ "${UPLOAD_DIR}" != "" ]; then
-  mkdir -p $UPLOAD_DIR
-  chown nobody:nobody -R $UPLOAD_DIR
-  echo "Using $UPLOAD_DIR as upload directory."
-  if [ "${SYMLINK_DIR}" != "" ]; then
-    mkdir -p $SYMLINK_DIR
-    chown nobody:nobody -R $SYMLINK_DIR
-    echo "Using $SYMLINK_DIR as symlink directory."
-  else
-    export SYMLINK_DIR="/var/www/html/"
-    echo "No symlink set, so using default."
-  fi
-else
-  echo "Using /var/www/html/ as upload directory."
+if [ ! -d /var/www/html/images ]; then
+  mkdir -p /var/www/html/images
 fi
+chown nobody:nobody -R /var/www/html/images
 
 if [ "${FILE_EXTENSION}" != "" ]; then
   echo "Accepted file extension(s) set to: $FILE_EXTENSION"

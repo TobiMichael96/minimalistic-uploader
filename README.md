@@ -18,11 +18,12 @@ There are some environment variables available:
 - PAGE_URL (sets the page url, if not set it tries to get it automatically)
 - PAGE_TITLE (sets the page title, default: Uploader)
 - FILE_EXTENSION (sets the accepted file extension(s) separated by comma, default: jpg)
-- UPLOAD_DIR (sets the directory where the files get uploaded to, default: /var/www/html/)
-- SYMLINK_DIR (sets the directory for the symlink directory, mandatory when *UPLOAD_DIR* is set)
 - CHARACTERS (sets the character pool for the random name, default: AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789)
 - NAME_LENGTH (sets the length of the random name, default: 12)
 
+
+The uploader folder inside the container is `/var/www/html/images/`, so if you want to keep the images, you have to mount
+the folder via docker-compose.
 
 #### Security options
 

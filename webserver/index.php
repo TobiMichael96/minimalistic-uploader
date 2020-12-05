@@ -4,21 +4,15 @@ include 'settings.php';
 $files = array();
 $counter = 0;
 
-if ($sym_folder_set == True) {
-    $folder = $sym_folder;
-} else {
-    $folder = $upload_folder;
-}
-
 if (isset($_GET['delete'])) {
-    if (strpos($_GET['delete'], $folder) !== false) {
+    if (strpos($_GET['delete'], $upload_folder) !== false) {
         unlink($_GET['delete']);
         header('Location: ' . $base_url);
     } else {
         exit("Error, file not found!");
     }
 } else {
-    foreach (glob($folder . '*.*') as $file) {
+    foreach (glob($upload_folder . '*.*') as $file) {
         if (in_array(substr($file, strpos($file, ".") + 1), $extensions)) {
             $files[$counter] = array("name" => basename($file), "time" => filemtime($file), "path" => $file);
             ++$counter;
