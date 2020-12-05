@@ -58,7 +58,7 @@ if (isset($_GET['delete'])) {
                 echo '<tr class="d-flex">';
                 echo '<td class="col-5"><a target="_blank" rel="noopener noreferrer" href="' . $base_url . 'images/' . $name . '"><h5>' . substr($name, 0, strpos($name, ".")) . '</h5></a></td>';
                 echo '<td class="col-5">' . date("d F Y", $time) . ' at ' . date("H:i:s", $time) . '</td>';
-                echo '<td class="col-2"><a href="' . $base_url . 'images/' . 'index.php?delete=' . $path . '" class="btn btn-danger btn-sm">Delete</a></td>';
+                echo '<td class="col-2"><a href="' . $base_url . 'index.php?delete=' . $path . '" class="btn btn-danger btn-sm">Delete</a></td>';
                 echo '</tr>';
             }
             ?>
