@@ -23,8 +23,8 @@ if [ "${UPLOAD_DIR}" != "" ]; then
     chown nobody:nobody -R $SYMLINK_DIR
     echo "Using $SYMLINK_DIR as symlink directory."
   else
-    echo "UPLOAD_DIR set but no SYMLINK_DIR set, going to end now..."
-    exit 1
+    export SYMLINK_DIR="/var/www/hmtl/"
+    echo "No symlink set, so using default."
   fi
 else
   echo "Using /var/www/html/ as upload directory."
