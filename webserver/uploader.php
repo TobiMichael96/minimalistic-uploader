@@ -16,7 +16,10 @@ if (isset($_FILES['file'])) {
 
     if (in_array($extension_file, $extensions)) {
         if (move_uploaded_file($imgname_tmp, $upload_folder . $imgname)) {
-            exec('jpegoptim --size 1000 ' . $upload_folder . $imgname);
+            $filename = $upload_folder . $imgname
+            $filename = stripcslashes($filename);
+            exec('jpegoptim --size 1000 ' . $filename);
+            exec('convert -resize 70% ' . $filename . $filename);
             echo $base_url . 'images/' . $imgname;
         } else {
             exit("Error, cloud not move file!");
