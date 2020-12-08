@@ -19,7 +19,7 @@ if (isset($_FILES['file'])) {
             $filename = $upload_folder . $imgname;
             $filename = stripcslashes($filename);
             exec('jpegoptim --size 1000 ' . $filename);
-            exec('convert -resize 70% ' . $filename . $filename);
+            exec('convert -resize 70% ' . $filename . ' ' . $filename);
             echo $base_url . 'images/' . $imgname;
         } else {
             exit("Error, cloud not move file!");
