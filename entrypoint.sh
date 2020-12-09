@@ -25,13 +25,13 @@ else
   echo "Accepted file extension automatically set to jpg."
 fi
 
-if [ -z "${RESIZE_IMG}" ]; then
+if [ "${RESIZE_IMG}" != "" ]; then
   echo "Images will be resized to ${RESIZE_IMG}%."
 else
   echo "Images will not be resized."
 fi
 
-if [ -z "${COMPRESS_IMG}" ]; then
+if [ "${COMPRESS_IMG}" != "" ]; then
   echo "Images will be compressed to ${COMPRESS_IMG}."
 else
   echo "Images will not be compressed."
