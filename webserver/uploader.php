@@ -22,12 +22,12 @@ if (isset($_FILES['file'])) {
             $filename = $upload_folder . $imgname;
             $filename = stripcslashes($filename);
             // check if picture is jpeg and optimize it
-            if (in_array($extension_file, $jpeg_array) && $compress_img) {
-                exec('jpegoptim --size 1000 ' . $filename);
+            if (in_array($extension_file, $jpeg_array) && !empty($compress_img)) {
+                exec('jpegoptim --size ' . $compress_img . ' ' . $filename);
             }
             // resize pictures
-            if ($resize_img) {
-                exec('convert -resize 70% ' . $filename . ' ' . $filename);
+            if (!empty($resize_img)) {
+                exec('convert -resize ' . $resize_img . ' ' . $filename . ' ' . $filename);
             }
             echo $base_url . 'images/' . $imgname;
         } else {

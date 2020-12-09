@@ -45,16 +45,16 @@ if (getenv('PAGE_TITLE') !== False) {
 
 # Check if resize flag is set
 if (getenv('RESIZE_IMG') !== False) {
-    $resize_img = True;
+    $resize_img = getenv('RESIZE_IMG');
 } else {
-    $resize_img = False;
+    $resize_img = '';
 }
 
 # Check if compress flag is set
 if (getenv('COMPRESS_IMG') !== False) {
-    $compress_img = True;
+    $compress_img = getenv('COMPRESS_IMG');
 } else {
-    $compress_img = False;
+    $compress_img = '';
 }
 
 // Detects base URL
