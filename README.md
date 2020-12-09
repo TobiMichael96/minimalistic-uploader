@@ -20,6 +20,8 @@ There are some environment variables available:
 - FILE_EXTENSION (sets the accepted file extension(s) separated by comma, default: jpg)
 - CHARACTERS (sets the character pool for the random name, default: AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789)
 - NAME_LENGTH (sets the length of the random name, default: 12)
+- RESIZE_IMG (sets the percentage of the image resizing)
+- COMPRESS_IMG (sets the bytes to which the image will be compressed)
 
 
 The uploader folder inside the container is `/var/www/html/images/`, so if you want to keep the images, you have to mount
