@@ -43,6 +43,20 @@ if (getenv('PAGE_TITLE') !== False) {
     $page_title = 'Uploader';
 }
 
+# Check if resize flag is set
+if (getenv('RESIZE_IMG') !== False) {
+    $resize_img = True;
+} else {
+    $resize_img = False;
+}
+
+# Check if compress flag is set
+if (getenv('COMPRESS_IMG') !== False) {
+    $compress_img = True;
+} else {
+    $compress_img = False;
+}
+
 // Detects base URL
 function autoDetectBaseUrl()
 {

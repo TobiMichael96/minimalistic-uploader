@@ -31,11 +31,11 @@ WORKDIR /var/www/html
 COPY --chown=nobody webserver /var/www/html/
 
 # Expose the port nginx is reachable on
-EXPOSE 8080
+EXPOSE 80
 
 # Create files to secure the web server
 COPY entrypoint.sh /
 ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
 
 # Configure a healthcheck to validate that everything is up&running
-HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping || exit 1
+HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:80/fpm-ping || exit 1
