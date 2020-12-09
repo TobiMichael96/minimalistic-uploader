@@ -27,7 +27,7 @@ if (isset($_FILES['file'])) {
             }
             // resize pictures
             if (!empty($resize_img)) {
-                exec('convert -resize ' . $resize_img . ' ' . $filename . ' ' . $filename);
+                exec('convert -resize ' . $resize_img . '% ' . $filename . ' ' . $filename);
             }
             echo $base_url . 'images/' . $imgname;
         } else {
