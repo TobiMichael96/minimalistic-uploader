@@ -26,7 +26,7 @@ else
 fi
 
 if [ -z "${RESIZE_IMG}" ]; then
-  echo "Images will be resized to ${RESIZE_IMG}."
+  echo "Images will be resized to ${RESIZE_IMG}%."
 else
   echo "Images will not be resized."
 fi
